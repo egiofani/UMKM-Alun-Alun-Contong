@@ -22,13 +22,27 @@ Route::middleware(['auth'])->group(function () {
 });
 
 use App\Livewire\Admin\UmkmIndex;
+use App\Livewire\Admin\UmkmForm;
 use App\Livewire\Admin\ProdukIndex;
+use App\Livewire\Admin\ProdukForm;
 use App\Livewire\Admin\KategoriIndex;
+use App\Livewire\Admin\KategoriForm;
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
+    //UMKM
     Route::get('umkm', UmkmIndex::class)->name('admin.umkm');
+    Route::get('/umkm/create', UmkmForm::class)->name('umkm.create');
+    Route::get('/umkm/{umkm}/edit', UmkmForm::class)->name('umkm.edit');
+
+    //Produk
     Route::get('produk', ProdukIndex::class)->name('admin.produk');
+    Route::get('/produk/create', ProdukForm::class)->name('produk.create');
+    Route::get('/produk/{id}/edit', ProdukForm::class)->name('produk.edit');
+    //Kategori
     Route::get('kategori', KategoriIndex::class)->name('admin.kategori');
+    Route::get('/kategori/create', KategoriForm::class)->name('kategori.create');
+    Route::get('kategori/{id}/edit', KategoriForm::class)->name('kategori.edit');
+
 });
 
 
