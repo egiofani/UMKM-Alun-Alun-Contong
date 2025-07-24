@@ -22,6 +22,8 @@ class UmkmForm extends Component
 
     public $umkmId;
     public $nama, $deskripsi, $alamat, $nomor_whatsapp, $kategori_id, $foto,$foto_lama;
+    public $latitude, $longitude;
+
 
     public function mount($umkm = null)
     {
@@ -34,6 +36,8 @@ class UmkmForm extends Component
             $this->nomor_whatsapp = $data->nomor_whatsapp;
             $this->kategori_id = (string) $data->kategori_id;
             $this->foto_lama = $data->foto; // ini betul
+            $this->latitude = $data->latitude;
+            $this->longitude = $data->longitude;
         } 
     }
 
@@ -48,7 +52,13 @@ class UmkmForm extends Component
             'nomor_whatsapp' => 'required|string',
             'kategori_id' => 'required|exists:kategoris,id',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'latitude' => 'nullable',
+            'longitude' => 'nullable',
         ]);
+
+        $validated['kategori_id'] = (int) $this->kategori_id;
+
+        //dd($validated);
 
         if ($this->foto) {
             $validated['foto'] = $this->foto->store('umkm', 'public');
@@ -58,7 +68,7 @@ class UmkmForm extends Component
 
         Umkm::updateOrCreate(
             ['id' => $this->umkmId],
-            $validated
+            $validated,
         );
 
         session()->flash('success', 'UMKM berhasil disimpan.');
