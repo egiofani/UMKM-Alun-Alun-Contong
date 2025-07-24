@@ -6,24 +6,6 @@ use App\Livewire\Settings\Profile;
 use App\Livewire\User\Home;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-
-Route::get('/beranda', Home::class)->name('user.home');
-
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
-
-Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
-
-    Route::get('settings/profile', Profile::class)->name('settings.profile');
-    Route::get('settings/password', Password::class)->name('settings.password');
-    Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
-});
-
 use App\Livewire\Admin\UmkmIndex;
 use App\Livewire\Admin\UmkmForm;
 use App\Livewire\Admin\ProdukIndex;
@@ -31,21 +13,39 @@ use App\Livewire\Admin\ProdukForm;
 use App\Livewire\Admin\KategoriIndex;
 use App\Livewire\Admin\KategoriForm;
 
+
+
+// DASHBOARD & SETTINGS (auth user)
+Route::middleware(['auth'])->group(function () {
+    Route::view('dashboard', 'dashboard')->name('dashboard');
+
+    Route::redirect('settings', 'settings/profile');
+    Route::get('settings/profile', Profile::class)->name('settings.profile');
+    Route::get('settings/password', Password::class)->name('settings.password');
+    Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
+});
+
+// Halaman depan (frontend)
+Route::get('/', Home::class)->name('home');
+
+// Jika akses /admin langsung, arahkan ke login jika belum login
+Route::middleware('auth')->get('/admin', function () {
+    return redirect()->route('admin.umkm');
+});
+
+// Admin area (hanya untuk yang sudah login)
 Route::middleware(['auth'])->prefix('admin')->group(function () {
-    //UMKM
     Route::get('umkm', UmkmIndex::class)->name('admin.umkm');
-    Route::get('/umkm/create', UmkmForm::class)->name('umkm.create');
-    Route::get('/umkm/{umkm}/edit', UmkmForm::class)->name('umkm.edit');
+    Route::get('umkm/create', UmkmForm::class)->name('umkm.create');
+    Route::get('umkm/{umkm}/edit', UmkmForm::class)->name('umkm.edit');
 
-    //Produk
     Route::get('produk', ProdukIndex::class)->name('admin.produk');
-    Route::get('/produk/create', ProdukForm::class)->name('produk.create');
-    Route::get('/produk/{id}/edit', ProdukForm::class)->name('produk.edit');
-    //Kategori
-    Route::get('kategori', KategoriIndex::class)->name('admin.kategori');
-    Route::get('/kategori/create', KategoriForm::class)->name('kategori.create');
-    Route::get('kategori/{id}/edit', KategoriForm::class)->name('kategori.edit');
+    Route::get('produk/create', ProdukForm::class)->name('produk.create');
+    Route::get('produk/{id}/edit', ProdukForm::class)->name('produk.edit');
 
+    Route::get('kategori', KategoriIndex::class)->name('admin.kategori');
+    Route::get('kategori/create', KategoriForm::class)->name('kategori.create');
+    Route::get('kategori/{id}/edit', KategoriForm::class)->name('kategori.edit');
 });
 
 
