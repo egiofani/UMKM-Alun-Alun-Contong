@@ -50,6 +50,11 @@ class UmkmForm extends Component
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        $validated['kategori_id'] = (int) $this->kategori_id;
+
+        //dd($validated['kategori_id']);
+
+        
         if ($this->foto) {
             $validated['foto'] = $this->foto->store('umkm', 'public');
         } else {
@@ -58,7 +63,7 @@ class UmkmForm extends Component
 
         Umkm::updateOrCreate(
             ['id' => $this->umkmId],
-            $validated
+            $validated,
         );
 
         session()->flash('success', 'UMKM berhasil disimpan.');

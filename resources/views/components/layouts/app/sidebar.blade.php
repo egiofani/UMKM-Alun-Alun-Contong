@@ -1,3 +1,4 @@
+@if(auth()->check())
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
     <head>
@@ -81,7 +82,7 @@
                                 </span>
 
                                 <div class="grid flex-1 text-start text-sm leading-tight">
-                                    <span class="truncate font-semibold">{{ auth()->user()->name }}</span>
+                                        <span>{{ auth()->user()->name }}</span>
                                     <span class="truncate text-xs">{{ auth()->user()->email }}</span>
                                 </div>
                             </div>
@@ -159,5 +160,65 @@
         {{ $slot }}
 
         @fluxScripts
+        @stack('scripts')
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+        <script>
+    let map;
+    let marker;
+
+    function openMapModal() {
+        document.getElementById("mapModal").classList.remove("hidden");
+
+        setTimeout(() => {
+            if (!map) {
+                map = L.map("map").setView([-6.2, 106.816666], 13);
+
+                L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                    attribution: "© OpenStreetMap contributors",
+                }).addTo(map);
+
+                map.on("click", function (e) {
+                    const lat = e.latlng.lat.toFixed(8);
+                    const lon = e.latlng.lng.toFixed(8);
+
+                    document.getElementById("lat").value = lat;
+                    document.getElementById("lon").value = lon;
+
+                    if (marker) {
+                        marker.setLatLng(e.latlng);
+                    } else {
+                        marker = L.marker(e.latlng).addTo(map);
+                    }
+                });
+            } else {
+                map.invalidateSize();
+            }
+        }, 300); // Give modal time to render
+    }
+
+    function confirmLocation() {
+        const lat = document.getElementById("lat").value;
+        const lon = document.getElementById("lon").value;
+
+        if (lat && lon) {
+            document.getElementById("locationPreview").classList.remove("hidden");
+            document.getElementById("latDisplay").textContent = lat;
+            document.getElementById("lonDisplay").textContent = lon;
+        }
+
+        closeMapModal();
+    }
+
+    function closeMapModal() {
+        document.getElementById("mapModal").classList.add("hidden");
+    }
+</script>
+
+    
     </body>
+
+
 </html>
+@endif
