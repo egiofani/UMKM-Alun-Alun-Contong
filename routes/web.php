@@ -3,11 +3,14 @@
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
+use App\Livewire\User\Home;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/beranda', Home::class)->name('user.home');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
