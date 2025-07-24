@@ -13,7 +13,7 @@ class Home extends Component
 
         return view('livewire.user.home', [
             'umkmUnggulan' => $umkmUnggulan
-        ]);
+        ])->layout('components.layouts.user.app');
     }
 }
 
