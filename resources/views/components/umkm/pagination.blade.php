@@ -1,4 +1,4 @@
-<div class="flex justify-center mt-6">
+<div class="flex justify-center mt-4 mb-4">
   <ul class="inline-flex -space-x-px text-sm">
     <!-- Tombol Prev -->
     <li>

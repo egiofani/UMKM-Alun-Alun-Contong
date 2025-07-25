@@ -41,13 +41,7 @@
                 @endforeach
             </div>
 
-            <div class="flex justify-center mt-6 space-x-2">
-                <button class="w-8 h-8 flex items-center justify-center border rounded text-sm text-gray-600">&lt;</button>
-                <button class="w-8 h-8 flex items-center justify-center border rounded text-white bg-blue-500 text-sm">1</button>
-                <button class="w-8 h-8 flex items-center justify-center border rounded text-sm">2</button>
-                <button class="w-8 h-8 flex items-center justify-center border rounded text-sm">3</button>
-                <button class="w-8 h-8 flex items-center justify-center border rounded text-sm text-gray-600">&gt;</button>
-            </div>
+            @include('components.umkm.pagination')
         </div>
     @include('components.default.footer')
     </div>
