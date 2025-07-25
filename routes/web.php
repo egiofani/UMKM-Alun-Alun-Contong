@@ -4,6 +4,10 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\User\Home;
+use App\Livewire\User\UmkmList;
+use App\Livewire\User\ProdukList;
+use App\Livewire\User\UmkmDetail;
+use App\Livewire\User\AboutUs;
 use Illuminate\Support\Facades\Route;
 
 use App\Livewire\Admin\UmkmIndex;
@@ -27,6 +31,10 @@ Route::middleware(['auth'])->group(function () {
 
 // Halaman depan (frontend)
 Route::get('/', Home::class)->name('home');
+Route::get('/listumkm', UmkmList::class)->name('user.umkm');
+Route::get('/listproduk', ProdukList::class)->name('user.produk');
+Route::get('/detailumkm/{id}', UmkmDetail::class)->name('user.detailumkm');
+Route::get('/aboutus', AboutUs::class)->name('user.aboutus');
 
 // Jika akses /admin langsung, arahkan ke login jika belum login
 Route::middleware('auth')->get('/admin', function () {
