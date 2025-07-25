@@ -23,7 +23,7 @@
 
             <!-- Filter Dropdown -->
             <div class="flex justify-start mb-6">
-                <select wire:model="selectedKategori"
+                <select wire:change="selectedKategori"
                         class="border rounded-lg px-4 py-2 text-sm">
                     <option value="">Semua Kategori</option>
                     @foreach ($kategoriList as $kategori)
