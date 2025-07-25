@@ -40,6 +40,8 @@
                     <x-umkm.umkm-card :umkm="$umkm" />
                 @endforeach
             </div>
+
+            @include('components.umkm.pagination')
         </div>
     @include('components.default.footer')
     </div>
