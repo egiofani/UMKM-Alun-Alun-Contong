@@ -18,7 +18,11 @@
                 <h3 class="text-xl md:text-2xl text-grey-900">Produk Lainnya</h3>
                 <div class="bg-blue-100 py-10 px-6 md:px-16 rounded-xl m-4">
                     <div class="flex space-x-4 overflow-x-auto scrollbar-hide">
-
+                        @forelse($produkList as $produk)
+                            <x-umkm.produk-card :produk="$produk" />
+                        @empty
+                            <p class="text-gray-500">Belum ada produk untuk UMKM ini.</p>
+                        @endforelse
                     </div>
                 </div>
             </div>
@@ -64,7 +68,12 @@
 
         <section>
             <div class="px-6 md:px-16 py-10">
-                <h3 class="text-xl md:2xl text-gray-900">UMKM Andalan Lainnya</h3> 
+                <h3 class="text-xl md:2xl text-gray-900">UMKM Andalan Lainnya</h3>
+                <div class="flex items-center justify-between mt-4">
+                     @foreach ($umkmLainnya as $umkm)
+                        <x-umkm.umkm-card :umkm="$umkm" />
+                    @endforeach
+                </div>
             </div>
         </section>
 
