@@ -13,6 +13,8 @@ class UmkmList extends Component
 
     public $search = '';
     public $filterKategori = '';
+    public $filterRw = ''; 
+
 
     protected $queryString = ['search', 'filterKategori'];
 
