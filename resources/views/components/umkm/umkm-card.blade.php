@@ -13,10 +13,9 @@
         {{ $umkm->nama }}
     </h3>
     <div class="p-4">
-        <button class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-xl w-full"> 
-            <a href="{{ Route('user.detailumkm', ['id' => $umkm->id]) }}">
+        <a href="{{ Route('user.detailumkm', ['id' => $umkm->id]) }}"
+        class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-xl w-full block text-center">
             Lihat Detail
-            </a> 
-        </button>
+        </a>
     </div>
 </div>

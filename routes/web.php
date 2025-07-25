@@ -8,7 +8,7 @@ use App\Livewire\User\UmkmList;
 use App\Livewire\User\ProdukList;
 use App\Livewire\User\UmkmDetail;
 use App\Livewire\User\AboutUs;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;   
 
 use App\Livewire\Admin\UmkmIndex;
 use App\Livewire\Admin\UmkmForm;
@@ -29,12 +29,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
 });
 
-// Halaman depan (frontend)
-Route::get('/', Home::class)->name('home');
-Route::get('/listumkm', UmkmList::class)->name('user.umkm');
-Route::get('/listproduk', ProdukList::class)->name('user.produk');
-Route::get('/detailumkm/{id}', UmkmDetail::class)->name('user.detailumkm');
-Route::get('/aboutus', AboutUs::class)->name('user.aboutus');
+    // Halaman depan (frontend)
+    Route::get('/', Home::class)->name('home');
+    Route::get('/listumkm', UmkmList::class)->name('user.umkm');
+    Route::get('/listproduk', ProdukList::class)->name('user.produk');
+    Route::get('/detailumkm/{id}', UmkmDetail::class)->name('user.detailumkm');
+    Route::get('/aboutus', AboutUs::class)->name('user.aboutus');
 
 // Jika akses /admin langsung, arahkan ke login jika belum login
 Route::middleware('auth')->get('/admin', function () {
