@@ -52,16 +52,33 @@
                 </div>
 
                 <!-- Kontak -->
-                <div class="flex justify-between items-center">
-                    <div class="w-1/2">
-                        <button>Sosmed</button>
-                    </div>
-                    <div class="w-1/2 flex justify-end items-end">
-                        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-xl w-1/2 text-center">
-                            WhatsApp
-                        </a>
-                    </div>
-                </div>
+                <!-- Kontak dan Tombol WhatsApp -->
+        <div class="flex justify-between items-center">
+            <div class="w-1/2">
+                <button>Sosmed</button>
+            </div>
+            <div class="w-1/2 flex justify-end items-end">
+                @if ($umkmUnggulan->nomor_whatsapp)
+                    @php
+                        // Pastikan nomornya hanya angka (hapus + dan spasi)
+                        $nomorWa = preg_replace('/[^0-9]/', '', $umkmUnggulan->nomor_whatsapp);
+                        // Pastikan diawali dengan 62
+                        if (substr($nomorWa, 0, 1) === '0') {
+                            $nomorWa = '62' . substr($nomorWa, 1);
+                        }
+                    @endphp
+                    <a
+                        href="https://wa.me/{{ $nomorWa }}"
+                        target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-xl w-1/2 text-center"
+                    >
+                        WhatsApp
+                    </a>
+                @else
+                    <p class="text-red-500 text-sm">Nomor WhatsApp belum tersedia.</p>
+                @endif
+            </div>
+        </div>
             </div>
         </section>
 
