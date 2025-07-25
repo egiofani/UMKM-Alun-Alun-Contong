@@ -1,4 +1,3 @@
-<x-layouts.user.app>
     <div>
         @include('components.default.navbar')
         <div class="px-6 md:px-16 py-10">
@@ -12,7 +11,7 @@
                     type="text"
                     placeholder="Cari produk..."
                     wire:model.debounce.300ms="search"
-                    wire:keydown="$refresh"
+                     wire:keydown="$refresh"
                     class="flex-grow outline-none bg-transparent text-sm px-2"
                 />
                 <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
@@ -52,5 +51,4 @@
 
     @include('components.default.footer')
     </div>
-</x-layouts.user.app>
 
