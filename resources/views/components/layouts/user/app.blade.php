@@ -6,15 +6,38 @@
     @livewireStyles
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-    .slide-in-up {
+    .slide-in-up,
+    .slide-in-left,
+    .slide-in-right,
+    .zoom-in,
+    .fade-in {
         opacity: 0;
-        transform: translateY(30px);
         transition: all 1.5s ease-out;
     }
 
-    .slide-in-up.visible {
+    .slide-in-up {
+        transform: translateY(30px);
+    }
+
+    .slide-in-left {
+        transform: translateX(100px);
+    }
+
+    .slide-in-right {
+        transform: translateX(-100px);
+    }
+
+    .zoom-in {
+        transform: scale(0.8);
+    }
+
+    .fade-in {
+        transform: scale(1);
+    }
+
+    .visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
     }
 </style>
 </head>

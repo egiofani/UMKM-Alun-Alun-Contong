@@ -1,6 +1,7 @@
 <x-layouts.user.app>
     <div>
         @include('components.default.navbar')
+    <div class="mx-auto mt-6 mb-6 px-10 py-6 container bg-[#bae6fd] rounded-xl lg:max-w-screen-lg overflow-hidden">
         <section>
            <div class="w-full mx-auto p-4 flex flex-col items-center justify-center">
                 <h1 class="text-2xl md:text-3xl font-extrabold mb-2">{{ $umkmUnggulan->nama }}</h1>
@@ -8,13 +9,13 @@
             </div>
         </section>
 
-        <section class="px-6 md:px-16 py-5">
+        <section class="px-6 py-5">
             <h3 class="text-xl md:text-2xl text-gray-900">Tentang {{ $umkmUnggulan->nama }}<h3>
             <p class="mb-4 text-gray-800">{{ $umkmUnggulan->deskripsi }}</p>
         </section>
 
         <section>
-            <div class="py-10 px-6 md:px-16">
+            <div class="py-10 px-6">
                 <h3 class="text-xl md:text-2xl text-grey-900">Produk Lainnya</h3>
                 <div class="bg-blue-100 py-10 px-6 md:px-16 rounded-xl m-4">
                     <div class="flex space-x-4 overflow-x-auto scrollbar-hide">
@@ -29,7 +30,7 @@
         </section>
 
         <section>
-            <div class="px-6 md:px-16 py-10">
+            <div class="px-6 py-10">
                 <h3 class="text-xl md:text-2xl text-gray-900">Lokasi dan Kontak</h3>
 
                 <!-- Tampilkan Alamat -->
@@ -84,7 +85,7 @@
 
 
         <section>
-            <div class="px-6 md:px-16 py-10">
+            <div class="px-6 py-10">
                 <h3 class="text-xl md:2xl text-gray-900">UMKM Andalan Lainnya</h3>
                 <div class="flex items-center justify-between mt-4">
                      @foreach ($umkmLainnya as $umkm)
@@ -93,6 +94,7 @@
                 </div>
             </div>
         </section>
+    </div>
 
         @include('components.default.footer')
     </div>

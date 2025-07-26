@@ -1,4 +1,4 @@
-<nav class="bg-[linear-gradient(to_top,_#ffffff,_#0ea5e9)] text-[#075985] px-6 py-4 flex justify-between items-center">
+<nav class="bg-[linear-gradient(to_top,_#ffffff,_#0ea5e9)] text-[#075985] px-12 py-4 flex justify-between items-center">
     <!-- Logo -->
     <div class="text-lg font-semibold">
         <span class="font-bold">G</span>ambar logo?
