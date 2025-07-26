@@ -5,7 +5,8 @@
         <section>
            <div class="w-full mx-auto p-4 flex flex-col items-center justify-center">
                 <h1 class="text-2xl md:text-3xl font-extrabold mb-2">{{ $umkmUnggulan->nama }}</h1>
-                <img src="{{ $umkmUnggulan->foto }}" alt="Foto UMKM" class="p-16 max-w-4xl h-auto lg:h-full object-cover z-20">
+                <img src="{{ $umkmUnggulan->foto ? asset('storage/' . $umkmUnggulan->foto) : 'https://via.placeholder.com/300x200' }}" 
+                alt="Foto UMKM"     class="p-4 max-w-4xl w-full h-[20px] object-cover rounded-xl shadow-lg">
             </div>
         </section>
 
