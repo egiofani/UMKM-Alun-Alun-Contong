@@ -14,6 +14,11 @@ class UmkmDetail extends Component
     public function mount($id)
     {
         $this->umkmUnggulan = Umkm::findOrFail($id);
+
+        $this->umkmLainnya = Umkm::where('id', '!=', $id)
+                            ->inRandomOrder()
+                            ->limit(3)
+                            ->get();
     }
     
     public function render()
@@ -21,6 +26,8 @@ class UmkmDetail extends Component
 
         return view('livewire.user.umkm-detail',[
             'umkmUnggulan' => $this->umkmUnggulan,
+            'produkList' => $this->umkmUnggulan->produk,
+            'umkmLainnya' => $this->umkmLainnya,
         ])->layout('components.layouts.user.app');
     }
 }
