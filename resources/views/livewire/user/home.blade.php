@@ -22,7 +22,7 @@
         </div>
 
         <!-- Hero Content -->
-        <div class="px-6 md:px-16 py-10 relative z-20 container mx-auto px-8 mt-32">
+        <div class="slide-in-up px-6 md:px-16 py-10 relative z-20 container mx-auto px-8 mt-32">
             <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4">
                 Sekilas Tentang<br>
                 Alun–Alun Contong
@@ -54,12 +54,12 @@
 
 
     <!-- Tentang -->
-    <section class="px-6 md:px-16 py-10 bg-white" id="tentang">
-        <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-10">
+    <div class="bg-[linear-gradient(to_bottom,_#bae6fd,_#ffffff)] px-6 md:px-16 py-10 bg-white" id="tentang">
+        <h2 class="slide-in-up text-2xl md:text-3xl font-extrabold text-gray-900 mb-10">
             Tentang Kelurahan Alun–Alun Contong
         </h2>
 
-        <div class="flex flex-col md:flex-row items-center gap-6">
+        <div class="slide-in-up flex flex-col md:flex-row items-center gap-6">
             <!-- Peta -->
             <div class="w-full md:w-2/3">
             <iframe
@@ -75,18 +75,18 @@
             </div>
 
             <!-- Deskripsi -->
-            <div class="w-full md:w-1/3">
+            <div class="slide-in-up w-full md:w-1/3">
             <p class="text-gray-800 leading-relaxed text-justify text-base md:text-lg">
                 Alun–Alun Contong terletak di jantung Kota Surabaya. Kelurahan ini dikenal dengan kekompakan warganya, keberagaman budaya, serta geliat ekonomi mikro yang tumbuh pesat dari semangat warga.
             </p>
             </div>
         </div>
-    </section>
+    </div>
 
 
     <!-- UMKM Lokal -->
-    <section class="bg-blue-100 py-10 px-6 md:px-16 mb-4" id="umkm">
-        <div class="flex items-center justify-between mb-4 flex-wrap gap-4">
+    <div class="bg-[linear-gradient(to_bottom,_#ffffff,_#bae6fd)] py-12 px-6 md:px-16" id="umkm">
+        <div class="slide-in-up flex items-center justify-between mb-4 flex-wrap gap-4">
             <div>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">UMKM Lokal Andalan Kami</h2>
                 <p class="text-gray-700 max-w-2xl">
@@ -99,31 +99,29 @@
             </a>
         </div>
 
-        <div class="flex flex-wrap gap-10">
-            @foreach ($umkmUnggulan as $umkm)
+        <div class="slide-in-up lg:px-[100px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+            @foreach ($umkmUnggulan->take(3) as $umkm)
                 <x-umkm.umkm-card :umkm="$umkm" />
             @endforeach
         </div>
-    </section>
+    </div>
 
     <!-- Ajakan Usaha -->
-    <section class="bg-white text-left py-10 px-6 md:px-16 mb-4">
-        <div class="container mx-auto">
-            <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Punya Usaha di Alun–Alun Contong?</h2>
-            <p class="mb-4">Yuk tampilkan usahamu di website ini! Gratis dan terbuka untuk semua warga yang memiliki usaha kecil di wilayah Alun-Alun Contong.</p>
-            <a href="#" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800">Hubungi Admin</a>
-        </div>
-    </section>
+    <div class="slide-in-up bg-[linear-gradient(to_bottom,_#bae6fd,_#ffffff)] text-left py-10 px-6 md:px-16 mb-4">
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Punya Usaha di Alun–Alun Contong?</h2>
+        <p class="mb-4">Yuk tampilkan usahamu di website ini! Gratis dan terbuka untuk semua warga yang memiliki usaha kecil di wilayah Alun-Alun Contong.</p>
+        <a href="#" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800">Hubungi Admin</a>
+    </div>
 
     <!-- Galeri -->
-    <section class="py-10 px-6 md:px-16 mb-4 container mx-auto">
+    <div class="slide-in-up py-10 px-6 md:px-16 mb-4">
         <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Galeri Kegiatan Warga</h2>
-        <div class="flex justify-between items-center gap-4">
-            @for ($i = 0; $i < 4; $i++)
-                <img src="https://via.placeholder.com/300x200" class="rounded shadow">
-            @endfor
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <img src="{{ asset('images/kegiatan 1.png') }}" class="rounded shadow">
+                <img src="{{ asset('images/kegiatan 2.png') }}" class="rounded shadow">
+                <img src="{{ asset('images/kegiatan 3.png') }}" class="rounded shadow">
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
       @include('components.default.footer')

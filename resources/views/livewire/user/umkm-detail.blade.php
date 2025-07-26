@@ -70,7 +70,7 @@
                     <a
                         href="https://wa.me/{{ $nomorWa }}"
                         target="_blank"
-                        class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-xl w-1/2 text-center"
+                        class="bg-[#0e7490] hover:bg-[#059669] text-white text-sm font-semibold px-4 py-2 rounded-xl w-1/2 text-center"
                     >
                         WhatsApp
                     </a>

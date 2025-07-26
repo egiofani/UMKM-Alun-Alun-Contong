@@ -40,14 +40,27 @@
                     <p class="text-gray-600 text-sm mt-2">Deskripsi produk dapat ditambahkan di sini...</p>
                 </div>
             </div>
-            @unless (request()->routeIs('user.listproduk'))
-            <button class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-xl w-full">
-                <a href="#">
-                    Hubungi Nomor WhatsApp
-                </a>
-                <a href="#"></a>
-            </button>
-            @endunless
+            @if (Route::currentRouteName() === 'user.produk')
+                @php
+                    $nomorWa = preg_replace('/[^0-9]/', '', $produk->umkm->nomor_whatsapp ?? '');
+                    if (substr($nomorWa, 0, 1) === '0') {
+                        $nomorWa = '62' . substr($nomorWa, 1);
+                    }
+                @endphp
+
+                @if ($nomorWa)
+                    <button
+                        type="button"
+                        onclick="window.open('https://wa.me/{{ $nomorWa }}', '_blank')"
+                        class="bg-[#0e7490] hover:bg-[#059669] text-white text-sm font-semibold px-4 py-2 rounded-xl w-full block text-center mt-4"
+                    >
+                        Hubungi Nomor WhatsApp
+                    </button>
+                @else
+                    <p class="text-red-500 text-sm mt-4">Nomor WhatsApp belum tersedia.</p>
+                @endif
+            @endif
+            
         </div>
     </div>
 </div>
