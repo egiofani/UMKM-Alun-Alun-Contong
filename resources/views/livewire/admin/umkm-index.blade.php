@@ -43,7 +43,7 @@
                         </div>
                     </td>
                     <td class="px-4 py-2">{{ $umkm->deskripsi }}</td>
-                    <td class="px-4 py-2">{{ $umkm->alamat }}</td>
+                    <td class="px-4 py-2">{{ $umkm->alamat }} RW {{ $umkm->rw }}</td>
                     <td class="px-4 py-2">
                         <a href="https://wa.me/{{ $umkm->nomor_whatsapp }}" target="_blank" class="text-green-600 underline">
                             {{ $umkm->nomor_whatsapp }}

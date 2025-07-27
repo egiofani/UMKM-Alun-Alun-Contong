@@ -21,7 +21,7 @@ class UmkmForm extends Component
     }
 
     public $umkmId;
-    public $nama, $deskripsi, $alamat, $nomor_whatsapp, $kategori_id, $foto,$foto_lama;
+    public $nama, $deskripsi, $alamat, $nomor_whatsapp, $kategori_id, $foto,$foto_lama, $rw;
     public $latitude, $longitude;
 
 
@@ -38,6 +38,7 @@ class UmkmForm extends Component
             $this->foto_lama = $data->foto; // ini betul
             $this->latitude = $data->latitude;
             $this->longitude = $data->longitude;
+            $this->rw = $data->rw;
         } 
     }
 
@@ -51,6 +52,7 @@ class UmkmForm extends Component
             'alamat' => 'required|string',
             'nomor_whatsapp' => 'required|string',
             'kategori_id' => 'required|exists:kategoris,id',
+            'rw' => 'required|in:1,2,3,4,5,6',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'latitude' => 'nullable',
             'longitude' => 'nullable',

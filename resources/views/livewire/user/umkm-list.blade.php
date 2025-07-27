@@ -24,15 +24,15 @@
 
                 <!-- Filter Dropdowns -->
                 <div class="flex flex-wrap justify-start gap-2 mb-6">
-                    <select wire:model="filterRw" wire:keydown="$refresh" 
-                    class="border border-2 border-[#9ca3af] px-4 py-2 rounded-xl">
-                        <option value="">-- Semua RW --</option>
-                        <option value="RW 01">RW 01</option>
-                        <option value="RW 02">RW 02</option>
-                        <option value="RW 03">RW 03</option>
+                    <select wire:model.lazy="filterRw" wire:keydown="$refresh" class="border px-3 py-2 rounded">
+                        <option value="">Semua RW</option>
+                        @for ($i = 1; $i <= 6; $i++)
+                            <option value="RW {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}">RW {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}</option>
+                        @endfor
                     </select>
 
-                   <select wire:model.lazy="filterKategori" class="border border-2 border-[#9ca3af] px-4 py-2 rounded-xl">
+
+                   <select wire:model="filterKategori" class="border px-4 py-2 rounded">
                         <option value="">-- Semua Kategori --</option>
                         @foreach ($kategoris as $kategori)
                             <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
@@ -43,7 +43,7 @@
         </div>
 
         <!-- UMKM Cards -->
-        <div class="flex flex-wrap gap-10 mb-10">
+        <div class="grid grid-cols-3 lg:grid-cols-4 gap-10">
             @forelse($umkmUnggulan as $umkm)
                 <x-umkm.umkm-card :umkm="$umkm" />
             @empty

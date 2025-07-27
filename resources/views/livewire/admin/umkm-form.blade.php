@@ -26,6 +26,17 @@
             @error('nomor_whatsapp') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
+        <div>
+            <label class="block text-sm font-medium text-gray-700">RW</label>
+            <select wire:model.defer="rw" class="w-full border text-gray-700 px-3 py-2 rounded">
+                <option value="">-- Pilih RW --</option>
+                @for ($i = 1; $i <= 6; $i++)
+                    <option value="{{ $i }}">RW {{ $i }}</option>
+                @endfor
+            </select>
+            @error('rw') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+        </div>
+
         <div>   
             <label class="block text-sm font-medium text-gray-700">Kategori</label>
             <select wire:model.defer="kategori_id" class="w-full border text-gray-700 px-3 py-2 rounded">
@@ -72,10 +83,6 @@
         <!-- Hidden inputs for Livewire or Form -->
         <input type="hidden" id="lat" wire:model="latitude" name="latitude">
         <input type="hidden" id="lon" wire:model="longitude" name="longitude">
-
-
-
-
 
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
             Simpan
