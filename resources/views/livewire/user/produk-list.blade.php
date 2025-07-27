@@ -10,7 +10,7 @@
                     <input
                         type="text"
                         placeholder="Cari produk..."
-                        wire:model.debounce.300ms="search"
+                        wire:model.lazy.debounce.300ms="search"
                         wire:keydown="$refresh"
                         class="flex-grow outline-none bg-transparent text-sm px-2"
                     />
@@ -23,9 +23,8 @@
 
                 <!-- Filter Dropdown -->
                 <div class="flex justify-start mb-6">
-                    <select wire:change="selectedKategori"
-                            class="border rounded-lg px-4 py-2 text-sm">
-                        <option value="">Semua Kategori</option>
+                    <select wire:model.lazy="filterKategori" class="border px-4 py-2 rounded">
+                        <option value="">-- Semua Kategori --</option>
                         @foreach ($kategoriList as $kategori)
                             <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
                         @endforeach

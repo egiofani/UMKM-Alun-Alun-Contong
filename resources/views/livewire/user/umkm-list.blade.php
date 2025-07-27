@@ -12,7 +12,7 @@
                     <input
                         type="text"
                         placeholder="Cari UMKM..."
-                        wire:model.debounce.100ms="search"
+                        wire:model.lazy.debounce.100ms="search"
                         wire:keydown="$refresh"
                         class="flex-grow outline-none bg-transparent text-sm px-2"
                     />
@@ -32,12 +32,11 @@
                         <option value="RW 03">RW 03</option>
                     </select>
 
-                   <select wire:model="filterKategori" class="border px-4 py-2 rounded">
+                   <select wire:model.lazy="filterKategori" class="border px-4 py-2 rounded">
                         <option value="">-- Semua Kategori --</option>
                         @foreach ($kategoris as $kategori)
                             <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
                         @endforeach
-                    </select>
                     </select>
                 </div>
             </div>
