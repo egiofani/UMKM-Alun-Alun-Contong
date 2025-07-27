@@ -13,7 +13,7 @@
         <!-- Navbar -->
         <div class="relative z-20 flex justify-between items-center px-8 pt-6">
             <div class="text-white text-lg font-semibold">Gambar logo?</div>
-            <nav class="space-x-6 text-white text-sm font-medium">
+            <nav class="space-x-6 text-white text-md font-medium">
                 <a href="/" class="hover:underline">Home</a>
                 <a href="{{ route('user.produk') }}" class="hover:underline">List Product</a>
                 <a href="#umkm" class="hover:underline">List UMKM</a>
@@ -76,7 +76,7 @@
 
             <!-- Deskripsi -->
             <div class="slide-in-up w-full md:w-1/3">
-            <p class="text-gray-800 leading-relaxed text-justify text-base md:text-lg">
+            <p class="text-gray-800 leading-relaxed text-justify text-base lg:text-xl">
                 Alun–Alun Contong terletak di jantung Kota Surabaya. Kelurahan ini dikenal dengan kekompakan warganya, keberagaman budaya, serta geliat ekonomi mikro yang tumbuh pesat dari semangat warga.
             </p>
             </div>
@@ -89,17 +89,17 @@
         <div class="slide-in-up flex items-center justify-between mb-4 flex-wrap gap-4">
             <div>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">UMKM Lokal Andalan Kami</h2>
-                <p class="text-gray-700 max-w-2xl">
+                <p class="text-gray-700 lg:text-xl max-w-2xl">
                     Berikut beberapa UMKM pilihan yang telah menjadi kebanggaan warga Alun-Alun Contong.
                 </p>
             </div>
             <a href="{{ route('user.umkm') }}"
-            class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-600 transition text-sm font-medium">
+            class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-600 transition lg:text-xl font-medium">
             Jelajahi Semua UMKM
             </a>
         </div>
 
-        <div class="slide-in-up lg:px-[100px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+        <div class="slide-in-up grid grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
             @foreach ($umkmUnggulan->take(3) as $umkm)
                 <x-umkm.umkm-card :umkm="$umkm" />
             @endforeach

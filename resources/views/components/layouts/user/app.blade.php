@@ -5,6 +5,7 @@
     <title>{{ $title ?? 'Beranda' }}</title>
     @livewireStyles
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
     .slide-in-up,
     .slide-in-left,
@@ -32,16 +33,23 @@
     }
 
     .fade-in {
-        transform: scale(1);
+        transform: scale(2);
     }
 
     .visible {
         opacity: 1;
         transform: none;
     }
+    .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
 </style>
 </head>
-<body class="bg-[#ffffff] text-gray-800">
+<body class="bg-[#f0f9ff] text-gray-800 min-h-screen max-w-screen">
 
     {{ $slot }}
 
@@ -49,7 +57,7 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const sections = document.querySelectorAll('.slide-in-up');
+        const sections = document.querySelectorAll('.slide-in-up, .fade-in');
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
