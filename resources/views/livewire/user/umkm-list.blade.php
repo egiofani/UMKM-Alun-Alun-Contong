@@ -43,7 +43,7 @@
         </div>
 
         <!-- UMKM Cards -->
-        <div class="flex flex-wrap gap-10 mb-10">
+        <div class="grid grid-cols-3 lg:grid-cols-4 gap-10">
             @forelse($umkmUnggulan as $umkm)
                 <x-umkm.umkm-card :umkm="$umkm" />
             @empty
