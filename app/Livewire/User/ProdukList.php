@@ -12,16 +12,18 @@ class ProdukList extends Component
     use WithPagination;
 
     public $search = '';
-    public $selectedKategori = '';
+    public $filterKategori = '';
 
-    public function updatingSearch()
+     public function updatingSearch()
     {
         $this->resetPage();
     }
 
-    public function updatingSelectedKategori()
+    public function updated($property)
     {
-        $this->resetPage();
+        if (in_array($property, ['filterKategori', 'filterRw'])) {
+            $this->resetPage(); // kalau pakai pagination
+        }
     }
 
     public function render()
@@ -32,12 +34,12 @@ class ProdukList extends Component
             $query->where('nama', 'like', '%' . $this->search . '%');
         }
 
-        if ($this->selectedKategori) {
-            $query->where('kategori_id', $this->selectedKategori);
+        if ($this->filterKategori) {
+            $query->where('kategori_id', $this->filterKategori);
         }
 
         return view('livewire.user.produk-list', [
-            'produks' => $query->latest()->paginate(3),
+            'produks' => $query->latest()->paginate(12),
             'kategoriList' => Kategori::all(),
         ])->layout('components.layouts.user.app');
     }

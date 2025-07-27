@@ -49,7 +49,7 @@
     }
 </style>
 </head>
-<body class="bg-[#f0f9ff] text-gray-800">
+<body class="bg-[#f0f9ff] text-gray-800 min-h-screen max-w-screen">
 
     {{ $slot }}
 

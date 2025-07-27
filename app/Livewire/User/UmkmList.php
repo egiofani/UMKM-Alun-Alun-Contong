@@ -23,10 +23,13 @@ class UmkmList extends Component
         $this->resetPage();
     }
 
-    public function updatingFilterKategori()
+    public function updated($property)
     {
-        $this->resetPage();
+        if (in_array($property, ['filterKategori', 'filterRw'])) {
+            $this->resetPage(); // kalau pakai pagination
+        }
     }
+
 
     public function render()
     {

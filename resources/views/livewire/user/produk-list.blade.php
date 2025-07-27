@@ -1,16 +1,16 @@
 <div>
     @include('components.default.navbar')
-    <div class="slide-in-up px-6 md:px-16 py-10">
-        <h2 class="fade-in text-center font-bold text-2xl md:text-3xl mb-4">Daftar Produk UMKM Lokal</h2>
+    <div class="min-h-screen px-6 md:px-16 py-10">
+        <h2 class="text-center font-bold text-2xl md:text-3xl mb-4">Daftar Produk UMKM Lokal</h2>
 
-        <div class="slide-in-up flex flex-col items-center w-full">
+        <div class=" flex flex-col items-center w-full">
             <div class="w-full max-w-4xl">
                 <!-- Search Bar -->
                 <div class="flex items-center justify-left w-full border border-2 border-[#9ca3af] bg-white rounded-full px-4 py-2 shadow-sm mb-6">
                     <input
                         type="text"
                         placeholder="Cari produk..."
-                        wire:model.debounce.300ms="search"
+                        wire:model.lazy.debounce.300ms="search"
                         wire:keydown="$refresh"
                         class="flex-grow outline-none bg-transparent text-sm px-2"
                     />
@@ -23,9 +23,8 @@
 
                 <!-- Filter Dropdown -->
                 <div class="flex justify-start mb-6">
-                    <select wire:change="selectedKategori"
-                            class="border border-2 border-[#9ca3af] rounded-lg px-4 py-2 text-sm">
-                        <option value="">-- Semua Kategori --</option>
+                    <select wire:model.lazy="filterKategori" class="border border-2 border-[#9ca3af] px-4 py-2 rounded">
+                        <option value="">-- -- Semua Kategori -- --</option>
                         @foreach ($kategoriList as $kategori)
                             <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
                         @endforeach
@@ -35,7 +34,7 @@
         </div>
 
         <!-- Produk Cards -->
-        <div class="slide-in-up grid grid-cols-3 lg:grid-cols-4 gap-10">
+        <div class=" grid grid-cols-3 lg:grid-cols-4 gap-10">
             @forelse ($produks as $produk)
                 <x-umkm.produk-card :produk="$produk" />
             @empty
@@ -44,11 +43,10 @@
         </div>
     </div>
         <!-- Pagination -->
-        <div class="slide-in-up flex justify-center gap-6 mt-6 mb-10">
+        <div class=" flex justify-center gap-6 mt-6 mb-10">
             {{ $produks->links() }}
         </div>
 
-    
 
     @include('components.default.footer')
 </div>

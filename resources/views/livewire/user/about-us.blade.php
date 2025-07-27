@@ -17,14 +17,14 @@
                 </nav>
             </div>
 
-            <div class="px-6 md:px-16 py-10 relative z-20 container mx-auto px-8 mt-32">
+            <div class="slide-in-up px-6 md:px-16 py-10 relative z-20 container mx-auto px-8 mt-32">
                 <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
                     About Us
                 </h1>
             </div>
         </header>
 
-        <section class="px-6 md:px-16 py-10 bg-white" id="tentang">
+        <section class="slide-in-up bg-[linear-gradient(to_bottom,_#bae6fd,_#ffffff)] px-6 md:px-16 py-10" id="tentang">
             <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-10">
                 Tentang Kami
             </h2>
@@ -44,7 +44,7 @@
             </div>
         </section>
 
-        <section class="px-6 md:px-16 py-10 bg-white">
+        <section class="slide-in-up bg-[linear-gradient(to_bottom,_#ffffff,_#bae6fd)] px-6 md:px-16 py-4">
             <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-10">
                 Informasi dan Kontak
             </h2>
@@ -75,11 +75,13 @@
                     </div>
                     <p>@kelurahan_alunaluncontong</p>
                 </div>
+            </section>
+            <section class="slide-in-up bg-[linear-gradient(to_top,_#ffffff,_#bae6fd)] px-6 md:px-16 py-2 mb-4">
                 <div class="w-full">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d816.4225436443451!2d112.73555014135945!3d-7.250295659229502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f941a74bee63%3A0xebe929e460f182fb!2sKANTOR%20KELURAHAN%20ALUN%20ALUN%20CONTONG!5e0!3m2!1sid!2sid!4v1753344857366!5m2!1sid!2sid"
                         width="100%"
-                        height="300"
+                        height="500"
                         allowfullscreen=""
                         loading="lazy"
                         style="border:0;"
