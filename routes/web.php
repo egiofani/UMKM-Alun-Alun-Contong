@@ -17,11 +17,19 @@ use App\Livewire\Admin\ProdukForm;
 use App\Livewire\Admin\KategoriIndex;
 use App\Livewire\Admin\KategoriForm;
 
+use App\Models\Umkm;
+use App\Models\Produk;
+
 
 
 // DASHBOARD & SETTINGS (auth user)
 Route::middleware(['auth'])->group(function () {
-    Route::view('dashboard', 'dashboard')->name('dashboard');
+    
+    Route::get('dashboard', function () {
+    $totalUmkm = Umkm::count();
+    $totalProduk = Produk::count();
+    return view('dashboard', compact('totalUmkm', 'totalProduk'));
+    })->name('dashboard');
 
     Route::redirect('settings', 'settings/profile');
     Route::get('settings/profile', Profile::class)->name('settings.profile');
