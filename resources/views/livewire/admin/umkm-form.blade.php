@@ -89,7 +89,7 @@
         <div style="width:700px;" class="bg-white rounded-lg shadow-lg w-full max-w-3xl p-4 relative">
             <h2 class="text-xl font-semibold mb-4">Tentukan Lokasi UMKM</h2>
 
-            <div id="map" style="height:500px;" class="w-20 rounded mb-4"></div>
+            <div id="map" style="height:500px;" class="w-full rounded mb-4"></div>
 
             <div class="flex justify-end space-x-2">
                 <button

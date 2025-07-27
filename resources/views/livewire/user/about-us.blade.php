@@ -9,7 +9,7 @@
 
             <div class="relative z-20 flex justify-between items-center px-8 pt-6">
                 <div class="text-white text-lg font-semibold">Gambar logo?</div>
-                <nav class="space-x-6 text-white text-sm font-medium">
+                <nav class="space-x-6 text-white text-md font-medium">
                     <a href="/" class="hover:underline">Home</a>
                     <a href="{{ route('user.produk') }}" class="hover:underline">List Product</a>
                     <a href="{{ route('user.umkm') }}" class="hover:underline">List UMKM</a>

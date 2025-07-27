@@ -1,6 +1,6 @@
 @props(['produk'])
 
-<div x-data="{ open: false }" class="bg-white rounded-2xl border shadow-md w-full max-w-xs overflow-hidden">
+<div x-data="{ open: false }" class="bg-white rounded-2xl border shadow-md w-full max-w-xs overflow-hidden text-md">
     <div class="relative">
         <img src="{{ $produk->foto ? asset('storage/produk/' . $produk->foto) : 'https://via.placeholder.com/300x200' }}"
              alt="{{ $produk->nama }}"
@@ -10,12 +10,12 @@
         </span>
     </div>
     <div class="p-4">
-        <h3 class="font-bold text-lg text-gray-900">{{ $produk->nama }}</h3>
+        <h3 class="font-bold text-gray-900">{{ $produk->nama }}</h3>
         <p class="text-gray-700 font-semibold">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
         <p class="text-gray-500 text-sm">{{ $produk->umkm->nama }}</p>
     </div>
     <div class="p-4">
-        <button @click="open = true" class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-xl w-full">
+        <button @click="open = true" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-xl w-full">
             Lihat Detail
         </button>
     </div>
