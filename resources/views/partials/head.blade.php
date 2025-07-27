@@ -9,8 +9,10 @@
 
 <link rel="preconnect" href="https://fonts.bunny.net">
 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
 <!-- leaflet -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
 
 @stack('styles')
 @vite(['resources/css/app.css', 'resources/js/app.js'])
