@@ -9,7 +9,7 @@ class Umkm extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'deskripsi', 'alamat', 'nomor_whatsapp', 'foto', 'kategori_id', 'latitude', 'longitude', 'rw'];
+    protected $fillable = ['nama', 'deskripsi', 'alamat', 'nomor_whatsapp', 'foto', 'kategori_id', 'latitude', 'longitude','rw'];
 
     public function produks()
     {

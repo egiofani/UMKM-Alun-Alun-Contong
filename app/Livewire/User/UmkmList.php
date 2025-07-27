@@ -16,19 +16,22 @@ class UmkmList extends Component
     public $filterRw = ''; 
 
 
-    protected $queryString = ['search', 'filterKategori'];
+    protected $queryString = ['search', 'filterKategori', 'filterRw'];
 
     public function updatingSearch()
     {
         $this->resetPage();
     }
 
-    public function updated($property)
+    public function updatingFilterKategori()
     {
-        if (in_array($property, ['filterKategori', 'filterRw'])) {
-            $this->resetPage(); // kalau pakai pagination
-        }
+        $this->resetPage();
     }
+
+    public function updatingFilterRw()
+{
+    $this->resetPage();
+}
 
 
     public function render()
@@ -41,6 +44,11 @@ class UmkmList extends Component
 
         if ($this->filterKategori) {
             $query->where('kategori_id', $this->filterKategori);
+        }
+
+         if ($this->filterRw) {
+        $rw = intval(str_replace('RW ', '', $this->filterRw));
+        $query->where('rw', $rw);
         }
 
         $umkmUnggulan = $query->paginate(9);
