@@ -1,4 +1,4 @@
-<div class="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white border border-[#bae6fd] shadow-lg rounded-lg">
     <h2 class="text-2xl font-semibold text-gray-500 mb-6 border-b pb-2">Tambah Kategori</h2>
 
     @if (session()->has('success'))

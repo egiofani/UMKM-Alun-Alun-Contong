@@ -8,7 +8,10 @@
             <div class="absolute inset-0 bg-black opacity-70 z-10"></div>
 
             <div class="relative z-20 flex justify-between items-center px-8 pt-6">
-                <div class="text-white text-lg font-semibold">Gambar logo?</div>
+                <div class="text-white text-lg font-semibold">
+                    <img src="{{ asset('images/logo 2.png') }}" alt="Logo Kelurahan"
+                    class="w-20 h-auto rounded-full bg-white/50 border border-white/50 overflow-hidden z-0">
+                </div>
                 <nav class="space-x-6 text-white text-md font-medium">
                     <a href="/" class="hover:underline">Home</a>
                     <a href="{{ route('user.produk') }}" class="hover:underline">List Product</a>

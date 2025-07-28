@@ -1,6 +1,6 @@
 @props(['produk'])
 
-<div x-data="{ open: false }" class="bg-white rounded-2xl border shadow-md w-full max-w-xs overflow-hidden text-md">
+<div x-data="{ open: false }" class="slide-in-up bg-white rounded-2xl border shadow-md w-full max-w-xs overflow-hidden text-md">
     <div class="relative">
         <img src="{{ $produk->foto ? asset('storage/produk/' . $produk->foto) : 'https://via.placeholder.com/300x200' }}"
              alt="{{ $produk->nama }}"

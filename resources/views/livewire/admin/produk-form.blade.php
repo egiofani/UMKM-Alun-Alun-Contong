@@ -1,4 +1,4 @@
-<div class="max-w-xl mx-auto bg-white p-6 shadow rounded">
+<div class="max-w-xl mx-auto bg-white border border-[#bae6fd] p-6 shadow-lg rounded">
     <h2 class="text-2xl text-gray-500 font-bold mb-4">Tambah Produk</h2>
 
     @if (session('success'))

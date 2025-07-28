@@ -1,4 +1,4 @@
-<div class="p-6 bg-white shadow rounded-lg">
+<div class="p-6 bg-white border border-[#bae6fd] shadow-lg rounded-lg">
     <h2 class="text-xl text-gray-700 font-bold mb-4">{{ $umkmId ? 'Edit' : 'Tambah' }} UMKM</h2>
 
     <form wire:submit.prevent="save" class="space-y-4" enctype="multipart/form-data">
