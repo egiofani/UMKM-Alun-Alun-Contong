@@ -9,9 +9,10 @@
              alt="{{ $umkm->nama }}"
              class="w-full h-48 object-cover rounded-t-xl">
     </div>
-    <h3 class="p-4 font-bold text-gray-800">
+    <h3 class="px-4 mb-2 mt-4 font-bold text-gray-800">
         {{ $umkm->nama }}
     </h3>
+    <p class="px-4 font-bold text-gray-800">RW {{ $umkm->rw }}</p>
     <div class="p-4">
         <a href="{{ Route('user.detailumkm', ['id' => $umkm->id]) }}"
         class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-xl w-full block text-center">

@@ -5,15 +5,18 @@
         @include('partials.head')
     </head>
     <body class="min-h-screen bg-white dark:bg-zinc-800">
-        <flux:sidebar sticky stashable class="border-e border-zinc-200 bg-blue-200 dark:border-zinc-700 dark:bg-zinc-900">
+        <flux:sidebar sticky stashable class="border-e border-zinc-200 bg-[#bae6fd] dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
 
-            <a href="{{ route('dashboard') }}" class="me-5 flex items-center space-x-2 rtl:space-x-reverse" wire:navigate>
-                UMKM Alun-Alun Contong
+            <a href="{{ route('dashboard') }}" class="mt-5 flex items-center space-x-2 gap-2 rtl:space-x-reverse" wire:navigate>
+                <p><img src="{{ asset('images/logo 2.png') }}" alt="Logo Kelurahan"
+                class="w-20 h-auto rounded-full bg-white/50 border border-white/50 overflow-hidden z-0">
+                </p>
+                <p class="text-md font-extrabold">Alun-Alun Contong</p>
             </a>
 
-            <flux:navlist variant="outline">
-                <flux:navlist.group :heading="__('Platform')" class="grid">
+            <flux:navlist variant="outline" class="mt-8">
+                <flux:navlist.group :heading="__('UMKM')" class="grid">
                     <flux:navlist.item 
                         icon="home" 
                         :href="route('dashboard')" 

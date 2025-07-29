@@ -1,4 +1,4 @@
-<div class="p-6 bg-white shadow text-gray-700 rounded-lg">
+<div class="p-6 bg-white border border-[#bae6fd] shadow-lg text-gray-700 rounded-lg">
     @if (session('success'))
         <div class="mb-4 p-3 bg-green-500 text-green-500 rounded">
             {{ session('success') }}
@@ -12,7 +12,7 @@
         </a>
     </div>
 
-    <table class="w-full text-sm text-left border border-gray-200">
+    <table class="w-full text-sm text-left border border-[#bae6fd]">
         <thead class="bg-gray-100">
             <tr class="text-gray-700">
                 <th class="px-4 py-2 border">Nama</th>

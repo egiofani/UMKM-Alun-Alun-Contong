@@ -11,8 +11,13 @@
         <div class="absolute inset-0 bg-black opacity-70 z-10"></div>
 
         <!-- Navbar -->
-        <div class="relative z-20 flex justify-between items-center px-8 pt-6">
-            <div class="text-white text-lg font-semibold">Gambar logo?</div>
+        <div class="relative z-20 flex justify-between items-center px-16 py-6">
+            <div class="flex flex-col text-white text-lg font-semibold">
+                <a href="{{ route('login') }}">
+                <img src="{{ asset('images/logo 2.png') }}" alt="Logo Kelurahan"
+                class="w-20 h-auto rounded-full bg-white/50 border border-white/50 overflow-hidden z-0">
+                </a>
+            </div>
             <nav class="space-x-6 text-white text-md font-medium">
                 <a href="/" class="hover:underline">Home</a>
                 <a href="{{ route('user.produk') }}" class="hover:underline">List Product</a>
@@ -22,7 +27,7 @@
         </div>
 
         <!-- Hero Content -->
-        <div class="slide-in-up px-6 md:px-16 py-10 relative z-20 container mx-auto px-8 mt-32">
+        <div class="slide-in-up px-6 md:px-16 py-10 relative z-20 container mx-auto mt-10">
             <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4">
                 Sekilas Tentang<br>
                 Alun–Alun Contong
@@ -100,7 +105,7 @@
         </div>
 
         <div class="slide-in-up grid grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
-            @foreach ($umkmUnggulan->take(3) as $umkm)
+            @foreach ($umkmUnggulan->take(4) as $umkm)
                 <x-umkm.umkm-card :umkm="$umkm" />
             @endforeach
         </div>

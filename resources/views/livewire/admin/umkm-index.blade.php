@@ -1,5 +1,5 @@
 
-<div class="p-6 bg-white shadow text-gray-700 rounded-lg">
+<div class="p-6 bg-white shadow-lg text-gray-700 rounded-lg border border-[#bae6fd]">
 @if (session()->has('message'))
     <div class="p-4 mb-4 text-sm text-green-800 bg-green-100 rounded-lg flex justify-between items-center">
         <span>{{ session('message') }}</span>
@@ -17,7 +17,7 @@
         </a>
     </div>
 
-<div class="overflow-x-auto bg-white rounded-xl shadow-md">
+<div class="overflow-x-auto bg-white border border-[#bae6fd] rounded-xl shadow-md">
     <table class="w-full text-sm text-left border border-gray-200 ">
         <thead class="bg-gray-100 ">
             <tr class="text-gray-700">

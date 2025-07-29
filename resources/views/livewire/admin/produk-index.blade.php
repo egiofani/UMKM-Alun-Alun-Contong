@@ -1,5 +1,5 @@
 
-<div class="p-6 bg-white shadow text-gray-700 rounded-lg">
+<div class="p-6 bg-white border border-[#bae6fd] shadow-lg text-gray-700 rounded-lg">
     @if (session()->has('success'))
     <div class="bg-green-100 text-green-700 px-4 py-2 rounded mb-4">
         {{ session('success') }}
@@ -13,7 +13,7 @@
         </a>
     </div>
 
-    <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+    <div class="overflow-x-auto bg-white border border-[#bae6fd] rounded-xl shadow-md">
         <table class="w-full table-auto border border-gray-200 text-sm">
             <thead class="bg-gray-100 text-gray-500 uppercase">
                 <tr>
