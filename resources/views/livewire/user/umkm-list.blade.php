@@ -32,7 +32,7 @@
                     </select>
 
 
-                   <select wire:model.lazy="filterKategori" 
+                   <select wire:model.lazy="filterKategori" wire:keydown="$refresh"
                    class="w-full sm:w-auto border border-2 border-[#9ca3af] px-4 py-2 rounded focus:ring-2 focus:ring-blue-400">
                         <option value="">-- Semua Kategori --</option>
                         @foreach ($kategoris as $kategori)
