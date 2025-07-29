@@ -105,7 +105,7 @@
         </div>
 
         <div class="slide-in-up grid grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
-            @foreach ($umkmUnggulan->take(3) as $umkm)
+            @foreach ($umkmUnggulan->take(4) as $umkm)
                 <x-umkm.umkm-card :umkm="$umkm" />
             @endforeach
         </div>
