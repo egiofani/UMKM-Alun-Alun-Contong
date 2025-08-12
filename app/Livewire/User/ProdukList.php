@@ -41,7 +41,9 @@ class ProdukList extends Component
         return view('livewire.user.produk-list', [
             'produks' => $query->latest()->paginate(12),
             'kategoriList' => Kategori::all(),
-        ])->layout('components.layouts.user.app');
+        ])->layout('components.layouts.user.app', [
+            'title' => 'List Produk'
+        ]);
     }
 }
 

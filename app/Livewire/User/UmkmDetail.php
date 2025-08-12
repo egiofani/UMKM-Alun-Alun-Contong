@@ -28,6 +28,8 @@ class UmkmDetail extends Component
             'umkmUnggulan' => $this->umkmUnggulan,
             'produkList' => $this->umkmUnggulan->produk,
             'umkmLainnya' => $this->umkmLainnya,
-        ])->layout('components.layouts.user.app');
+        ])->layout('components.layouts.user.app', [
+            'title' => $this->umkmUnggulan->nama
+        ]);
     }
 }

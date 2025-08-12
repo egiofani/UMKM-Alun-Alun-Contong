@@ -1,7 +1,7 @@
 <x-layouts.user.app>
-    <div>
+    <div class="min-h-screen">
         <header class="relative h-96 text-white overflow-hidden">
-            <img src="{{ asset('images/kelurahan 1.png') }}" 
+            <img src="{{ asset('images/Kelurahan 1.webp') }}" 
                 alt="Kantor Kelurahan"
                 class="absolute inset-0 w-full h-full object-cover z-0" />
 
@@ -9,10 +9,10 @@
 
             <div class="relative z-20 flex justify-between items-center px-8 pt-6">
                 <div class="text-white text-lg font-semibold">
-                    <img src="{{ asset('images/logo 2.png') }}" alt="Logo Kelurahan"
+                    <img src="{{ asset('images/logo 2.webp') }}" alt="Logo Kelurahan"
                     class="w-20 h-auto rounded-full bg-white/50 border border-white/50 overflow-hidden z-0">
                 </div>
-                <nav class="space-x-6 text-white text-md font-medium">
+                <nav class="space-x-6 text-white text-xl font-medium">
                     <a href="/" class="hover:underline">Home</a>
                     <a href="{{ route('user.produk') }}" class="hover:underline">List Product</a>
                     <a href="{{ route('user.umkm') }}" class="hover:underline">List UMKM</a>
@@ -21,26 +21,26 @@
             </div>
 
             <div class="slide-in-up px-6 md:px-16 py-10 relative z-20 container mx-auto px-8 mt-32">
-                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+                <h1 class="text-5xl font-extrabold leading-tight">
                     About Us
                 </h1>
             </div>
         </header>
 
         <section class="slide-in-up bg-[linear-gradient(to_bottom,_#bae6fd,_#ffffff)] px-6 md:px-16 py-10" id="tentang">
-            <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-10">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-10">
                 Tentang Kami
             </h2>
 
-            <div class="flex flex-col md:flex-row items-center gap-6">
-                <div class="w-full md:w-1/2">
-                    <p class="text-gray-800 leading-relaxed text-justify text-base md:text-xl">
+            <div class="flex flex-col lg:flex-row items-center gap-6">
+                <div class="w-full lg:w-1/2">
+                    <p class="text-gray-800 leading-relaxed text-justify text-xl">
                         Kelurahan Alun-Alun Contong adalah bagian dari Kecamatan Bubutan, Kota Surabaya, yang berkomitmen memberikan pelayanan publik yang prima, transparan, dan akuntabel. 
                         Kami melayani administrasi kependudukan, pemberdayaan masyarakat, serta pembangunan sosial dengan mendorong partisipasi aktif warga demi mewujudkan lingkungan yang tertib, aman, dan sejahtera.
                     </p>
                 </div>
-                <div class="w-full md:w-1/2">
-                    <img src="{{ asset('images/kelurahan 2.png') }}" 
+                <div class="w-full lg:w-1/2">
+                    <img src="{{ asset('images/kelurahan 2.webp') }}" 
                     alt="Kantor Kelurahan"
                     class="w-full h-full rounded-xl">
                 </div>
@@ -48,7 +48,7 @@
         </section>
 
         <section class="slide-in-up bg-[linear-gradient(to_bottom,_#ffffff,_#bae6fd)] px-6 md:px-16 py-4">
-            <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-10">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-10">
                 Informasi dan Kontak
             </h2>
             <div class="space-y-3 text-xl text-grey-800">
@@ -76,7 +76,9 @@
                         <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a.75.75 0 110 1.5.75.75 0 010-1.5z"/>
                     </svg>
                     </div>
-                    <p>@kelurahan_alunaluncontong</p>
+                    <a href="https://www.instagram.com/kelurahan_alunaluncontong?igsh=MTBtY25sMnZidWs3Yw==" target="_blank">
+                        <p>@kelurahan_alunaluncontong</p>
+                    </a>
                 </div>
             </section>
             <section class="slide-in-up bg-[linear-gradient(to_top,_#ffffff,_#bae6fd)] px-6 md:px-16 py-2 mb-4">

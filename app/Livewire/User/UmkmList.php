@@ -55,6 +55,8 @@ class UmkmList extends Component
         $kategoris = Kategori::all();
 
         return view('livewire.user.umkm-list', compact('umkmUnggulan', 'kategoris'))
-            ->layout('components.layouts.user.app');
+            ->layout('components.layouts.user.app', [
+                'title' => 'List UMKM'
+            ]);
     }
 }

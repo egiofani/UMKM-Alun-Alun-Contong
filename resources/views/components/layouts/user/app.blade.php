@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ $title ?? 'Beranda' }}</title>
+    <link rel="icon" href="{{ asset('images/logo 2.webp') }}" type="image/png">
     @livewireStyles
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
